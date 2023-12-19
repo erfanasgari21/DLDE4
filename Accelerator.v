@@ -4,7 +4,7 @@ module Accelerator(
     input [4:0] v,
     input [1:0] u,
 
-    output wrReq, rdReq, wDone
+    output wrReq, wDone,
     output [20:0] wrData
 );
 
