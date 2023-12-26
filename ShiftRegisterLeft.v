@@ -7,7 +7,7 @@ module ShiftRegisterLeft(
     input clk, rst;
     input shL, load;
     input [15:0] inp;
-    output [15:0] p;
+    output reg [15:0] p;
 
     always @(posedge clk)
     begin

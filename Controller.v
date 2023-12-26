@@ -8,7 +8,7 @@ module WrapperController(
     input clk, rst,
     input wStart,
     input engDone,
-    output ldu, ldv, shL, engStart, wrReq, wDone
+    output reg ldu, ldv, shL, engStart, wrReq, wDone
 );
 
     reg [2:0] ps, ns;

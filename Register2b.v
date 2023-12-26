@@ -6,7 +6,7 @@ module Register2b(
 
     input clk, rst, load;
     input [1:0] inp;
-    output [1:0] p;
+    output reg [1:0] p;
 
     always @(posedge clk)
     begin

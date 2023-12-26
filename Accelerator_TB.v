@@ -1,24 +1,27 @@
 `timescale 1ns/1ns
+
+// v = {000, 11111, 0000 0000} = 0.12109 => res = 1.12873
+// v = {000, 01111, 0000 0000} = 0.05859 => res = 1.0603
+// u = 0
 module Accelerator_TB();
     reg clk, rst, wStart;
-    wire wDone;
-    reg [15:0] frac;
-    reg [1:0] int;
+    reg [4:0] v;
+    reg [1:0] u;
     wire wrReq, wDone;
-    wire [20:0] wrData
+    wire [20:0] wrData;
 
-    Accelerator UT(clk, rst, wStart, frac, int, wrReq, wDone, wrData);
+    Accelerator UT(clk, rst, wStart, v, u, wrReq, wDone, wrData);
 
     initial begin
         clk = 0;
         rst = 1;
-        int = 2'b00;
+        u = 2'b00;
         #100 rst = 0;
-        #100 frac = 16'b1000000000000000;
+        #100 v = 5'b11111;
         #100 wStart = 1'b1;
         #100 wStart = 1'b0;
-        #100000
-        #100 frac = 16'b1100000000000000;
+        #100000;
+        #100 v = 5'b01111;
         #100 wStart = 1'b1;
         #100 wStart = 1'b0;
         #100000

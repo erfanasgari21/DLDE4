@@ -1,9 +1,7 @@
 module Counter2b( 
-    clk,rst, cnt, co
+    input clk, rst, cnt, output co
 );
-    input clk, rst, cnt, 
     reg [1:0] p;
-    output co;
     
     always @(posedge clk or rst) begin
         if(rst)
