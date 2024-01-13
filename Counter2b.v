@@ -3,7 +3,7 @@ module Counter2b(
 );
     reg [1:0] p;
     
-    always @(posedge clk or rst) begin
+    always @(posedge clk or posedge rst) begin
         if(rst)
             p <= 0;
         else if(cnt)

@@ -14,7 +14,7 @@ module Exponential_TB();
         #100 engX = 16'b1000000000000000;
         #100 engStart = 1'b1;
         #100 engStart = 1'b0;
-        #100000
+        #1000
         #100 engX = 16'b1100000000000000;
         #100 engStart = 1'b1;
         #100 engStart = 1'b0;
